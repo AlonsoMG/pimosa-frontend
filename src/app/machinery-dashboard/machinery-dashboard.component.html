@@ -1,0 +1,70 @@
+<div class="container-fluid my-4 mx-2">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <h2 class="section-title">
+                <span class="section-icon mr-2"><i class="fas fa-bars"></i></span>
+                <span>Lista Maquinaria</span>
+            </h2>
+            <div class="form-row my-2">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <select class="custom-select input-default">
+                        <option selected disabled value="">Mostrar</option>
+                        <option value="0">Mostrar Todos</option>
+                    </select>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-default" placeholder="Buscar">
+                        <div class="input-group-append ">
+                            <span class="input-group-text input-accent">
+                                <span class="form-icons"><i class="fas fa-search"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                    <button type="button" class="btn btn-block primary-button" (click)="showCreationPanel()">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="row" *ngIf="providerList.length > 0; else emptyProviderList">
+                Show message when no provider is found in the list.
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngFor="let provider of providerList"
+                    (click)=showConfigurationPanel(provider)>
+                    <div class="card card-primary {{provider.newProviderClass}} {{provider.updatedProviderClass}} {{provider.selectedProviderClass}} my-2">
+                        <div class="card-body">
+                            <h5 class="card-title">{{provider.businessName}}</h5>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 my-1">
+                                    <h6 class="card-subtitle">Razón Social</h6>
+                                    <p class="card-text"><small>{{provider.commercialSociety}}</small></p>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 my-1">
+                                    <h6 class="card-subtitle">Giro Comercial</h6>
+                                    <p class="card-text"><small>{{provider.lineOfBusiness}}</small></p>
+                                </div>
+                            </div>
+                            <h6 class="card-subtitle my-1">Registrado El: <span
+                                    class="card-text">{{provider.registrationDate}}</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-template #emptyProviderList>
+                <div class="row my-4">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+                        <h2 class="placeholder-title">No hay proveedores registrados</h2>
+                    </div>
+                </div>
+            </ng-template> -->
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <app-machinery-create *ngIf="creationPanel"></app-machinery-create>
+            <!-- <div *ngIf="configurationPanel">
+                <app-provider-management *ngIf="selectedProvider" [provider]="selectedProvider" (providerUpdatedEvent)="updateProviderInList($event)">
+                </app-provider-management>
+            </div> -->
+        </div>
+    </div>
+</div>
