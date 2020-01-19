@@ -208,8 +208,8 @@
             </label>
             <select class="form-control input-default" id="type" formControlName="type" aria-describedby="typeHelp">
                 <option selected disabled value="">Seleccionar</option>
-                <!-- <option *ngFor="let type of typeList" value={{type.pk}}>
-                    {{type.name}}</option> -->
+                <option *ngFor="let machineryType of machineryTypeList" value={{machineryType.pk}}>
+                    {{machineryType.name}}</option>
             </select>
             <small id="typeHelp" class="form-text text-muted">
                 Seleccione el tipo de maquinaria.
@@ -226,8 +226,8 @@
             <select class="form-control input-default" id="powerSource" formControlName="powerSource"
                 aria-describedby="powerSourceHelp">
                 <option selected disabled value="">Seleccionar</option>
-                <!-- <option *ngFor="let powerSource of powerSourceList" value={{powerSource.pk}}>
-                    {{powerSource.name}}</option> -->
+                <option *ngFor="let powerSource of powerSourceList" value={{powerSource.pk}}>
+                    {{powerSource.name}}</option>
             </select>
             <small id="powerSourceHelp" class="form-text text-muted">
                 Seleccione la fuente de energía.
@@ -241,8 +241,8 @@
             <select class="form-control input-default" id="displacement" formControlName="displacement"
                 aria-describedby="displacementHelp">
                 <option selected disabled value="">Seleccionar</option>
-                <!-- <option *ngFor="let displacement of displacementList" value={{displacement.pk}}>
-                    {{displacement.name}}</option> -->
+                <option *ngFor="let displacement of displacementList" value={{displacement.pk}}>
+                    {{displacement.name}}</option>
             </select>
             <small id="displacementHelp" class="form-text text-muted">
                 Seleccione el modo de transporte.
@@ -259,8 +259,8 @@
             <select class="form-control input-default" id="operation" formControlName="operation"
                 aria-describedby="operationHelp">
                 <option selected disabled value="">Seleccionar</option>
-                <!-- <option *ngFor="let operation of operationList" value={{operation.pk}}>
-                    {{operation.name}}</option> -->
+                <option *ngFor="let operation of operationList" value={{operation.pk}}>
+                    {{operation.name}}</option>
             </select>
             <small id="operationHelp" class="form-text text-muted">
                 Seleccione la operación que realiza.
@@ -273,8 +273,8 @@
             </label>
             <select class="form-control input-default" id="work" formControlName="work" aria-describedby="workHelp">
                 <option selected disabled value="">Seleccionar</option>
-                <!-- <option *ngFor="let work of workList" value={{work.pk}}>
-                    {{work.name}}</option> -->
+                <option *ngFor="let work of workList" value={{work.pk}}>
+                    {{work.name}}</option>
             </select>
             <small id="workHelp" class="form-text text-muted">
                 Seleccione el tipo de trabajo que realiza.
