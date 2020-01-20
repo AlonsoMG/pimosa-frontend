@@ -5,8 +5,9 @@ import { PowerSource } from './../models/power-source';
 import { Work } from './../models/work';
 import { MachineryType } from './../models/machinery-type';
 import { MachineryService } from './../services/machinery-service/machinery.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Machinery } from '../models/machinery';
 
 @Component({
   selector: 'app-machinery-create',
@@ -14,6 +15,8 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./machinery-create.component.scss']
 })
 export class MachineryCreateComponent implements OnInit {
+
+  @Output() machineryCreatedEvent = new EventEmitter<Machinery>();
 
   displacementList: Displacement[] = [];
   machineryTypeList: MachineryType[] = [];
@@ -145,8 +148,6 @@ export class MachineryCreateComponent implements OnInit {
       operation,
       work
     );
-
-    console.log(`Form submitted`);
   }
 
   private createMachinery(
@@ -175,7 +176,6 @@ export class MachineryCreateComponent implements OnInit {
       operation,
       work
     ).subscribe((response) => {
-      console.log(response);
       let createMachineryResponse: CreateMachineryResponse = new CreateMachineryResponse(
         response['outCreated'],
         response['outMessage'],
@@ -186,10 +186,12 @@ export class MachineryCreateComponent implements OnInit {
 
       if (createMachineryResponse.created) {
         this.successAlertMessage = createMachineryResponse.message;
+        this.getMachinery(createMachineryResponse.machineryPk);
+        this.newMachineryForm.reset();
       } else {
         this.errorAlertMessage = createMachineryResponse.message;
       }
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
     })
   }
 
@@ -205,6 +207,32 @@ export class MachineryCreateComponent implements OnInit {
           );
           this.displacementList.push(displacement);
         });
+      });
+  }
+
+  private getMachinery(machineryPk: string) {
+    this.machineryService.getMachinery(machineryPk)
+      .subscribe((response) => {
+        let machinery: Machinery = new Machinery(
+          response[0]['PK'],
+          response[0]['Code'],
+          response[0]['Name'],
+          response[0]['Brand'],
+          response[0]['Price'],
+          response[0]['MaintenanceCost'],
+          response[0]['AcquisitionDate'],
+          response[0]['MachineryTypePK'],
+          response[0]['MachineryType'],
+          response[0]['PowerSourcePK'],
+          response[0]['PowerSource'],
+          response[0]['DisplacementPK'],
+          response[0]['Displacement'],
+          response[0]['OperationPK'],
+          response[0]['Operation'],
+          response[0]['WorkPK'],
+          response[0]['Work']
+        );
+        this.notifyMachineryCreatedEvent(machinery);
       });
   }
 
@@ -268,9 +296,12 @@ export class MachineryCreateComponent implements OnInit {
       });
   }
 
+  private notifyMachineryCreatedEvent(createdMachinery: Machinery) {
+    this.machineryCreatedEvent.emit(createdMachinery);
+  }
+
   private resetAlerts() {
     this.successAlertMessage = null;
     this.errorAlertMessage = null;
   }
-
 }

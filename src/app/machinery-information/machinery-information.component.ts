@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Machinery } from 'src/app/models/machinery';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-machinery-information',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MachineryInformationComponent implements OnInit {
 
+  @Input() machinery: Machinery;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
 
 }

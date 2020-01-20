@@ -9,6 +9,7 @@ import { MachineryCreateComponent } from './machinery-create/machinery-create.co
 import { MachineryInformationComponent } from './machinery-information/machinery-information.component';
 import { MachineryUpdateComponent } from './machinery-update/machinery-update.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MachineryConfigurationComponent } from './machinery-configuration/machinery-configuration.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MachineryDashboardComponent,
     MachineryCreateComponent,
     MachineryInformationComponent,
-    MachineryUpdateComponent
+    MachineryUpdateComponent,
+    MachineryConfigurationComponent
   ],
   imports: [
     BrowserModule,

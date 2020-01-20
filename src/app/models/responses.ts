@@ -14,3 +14,17 @@ export class CreateMachineryResponse {
         this.machineryPk = machineryPk;
     }
 }
+
+export class UpdateMachineryResponse {
+    updated: boolean;
+    message: string;
+
+    constructor(
+        updated: boolean,
+        message: string,
+
+    ) {
+        this.updated = updated;
+        this.message = message;
+    }
+}
