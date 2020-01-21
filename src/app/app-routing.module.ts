@@ -1,12 +1,13 @@
 import { MachineryDashboardComponent } from './machinery-dashboard/machinery-dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ProjectDashboardComponent } from './project-dashboard/project-dashboard.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/management/machinery',
+    redirectTo: '/management/projects',
     pathMatch: 'full'
   },
   {
@@ -14,8 +15,12 @@ const routes: Routes = [
     component: MachineryDashboardComponent
   },
   {
+    path: 'management/projects',
+    component: ProjectDashboardComponent
+  },
+  {
     path: '**',
-    redirectTo: '/management/machinery',
+    redirectTo: '/management/projects',
   }
 ];
 

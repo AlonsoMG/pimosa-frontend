@@ -10,6 +10,15 @@ import { MachineryInformationComponent } from './machinery-information/machinery
 import { MachineryUpdateComponent } from './machinery-update/machinery-update.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MachineryConfigurationComponent } from './machinery-configuration/machinery-configuration.component';
+import { ProjectDashboardComponent } from './project-dashboard/project-dashboard.component';
+import { ProjectConfigurationComponent } from './project-configuration/project-configuration.component';
+import { ProjectInformationComponent } from './project-information/project-information.component';
+import { ProjectTasksComponent } from './project-tasks/project-tasks.component';
+import { ProjectUpdateComponent } from './project-update/project-update.component';
+import { TaskCreateComponent } from './task-create/task-create.component';
+import { TaskUpdateComponent } from './task-update/task-update.component';
+import { ProjectCreateComponent } from './project-create/project-create.component';
+import { ProjectMachineryComponent } from './project-machinery/project-machinery.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +27,22 @@ import { MachineryConfigurationComponent } from './machinery-configuration/machi
     MachineryCreateComponent,
     MachineryInformationComponent,
     MachineryUpdateComponent,
-    MachineryConfigurationComponent
+    MachineryConfigurationComponent,
+    ProjectDashboardComponent,
+    ProjectConfigurationComponent,
+    ProjectInformationComponent,
+    ProjectTasksComponent,
+    ProjectUpdateComponent,
+    TaskCreateComponent,
+    TaskUpdateComponent,
+    ProjectCreateComponent,
+    ProjectMachineryComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,    
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
