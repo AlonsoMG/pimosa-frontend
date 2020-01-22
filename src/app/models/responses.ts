@@ -32,6 +32,23 @@ export class CreateProjectResponse {
   }
 }
 
+export class CreateTaskResponse {
+  created: boolean;
+  message: string;
+  taskPk: string;
+
+  constructor(
+    created: boolean,
+    message: string,
+    taskPk: string
+
+  ) {
+    this.created = created;
+    this.message = message;
+    this.taskPk = taskPk;
+  }
+}
+
 export class UpdateMachineryResponse {
   updated: boolean;
   message: string;
@@ -47,6 +64,20 @@ export class UpdateMachineryResponse {
 }
 
 export class UpdateProjectResponse {
+  updated: boolean;
+  message: string;
+
+  constructor(
+    updated: boolean,
+    message: string,
+
+  ) {
+    this.updated = updated;
+    this.message = message;
+  }
+}
+
+export class UpdateTaskResponse {
   updated: boolean;
   message: string;
 

@@ -15,3 +15,11 @@ export const GET_PROJECT_LIST_URL = BASE_URL + '/project/project/list/';
 export const CREATE_PROJECT_URL = BASE_URL + '/project/project/create/';
 export const UPDATE_PROJECT_URL = BASE_URL + '/project/project/update/';
 export const GET_INDUSTRY_LIST_URL = BASE_URL + '/project/industry/list/';
+
+export const CREATE_TASK_URL = BASE_URL + '/tasks/task/create/';
+export const UPDATE_TASK_URL = BASE_URL + '/tasks/task/update/';
+export const DELETE_TASK_URL = BASE_URL + '/tasks/task/delete/';
+export const MAR_TASK_COMPLETED_URL = BASE_URL + '/tasks/task/mark-completed/';
+export const GET_TASK_URL = BASE_URL + '/tasks/task/';
+export const GET_TASK_LIST_URL = BASE_URL + '/tasks/task/list/';
+export const GET_TASK_STATUS_LIST_URL = BASE_URL + '/tasks/task/status/list/';

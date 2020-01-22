@@ -45,7 +45,7 @@
 }
 .form-icons{
     color: $primary-color-03;
-    font-size: 1em; 
+    font-size: 1em;
 }
 
 // Buttons
@@ -65,9 +65,27 @@
     border-color: $primary-color-16;
     box-shadow: 0rem 0rem 0rem 0.3rem $primary-color-16;
 }
+.options-button{
+    color: $primary-color-15;
+    border-color: transparent;
+    background-color: transparent;
+}
+.options-button:hover{
+    border-color: transparent;
+    box-shadow: transparent;
+}
+.options-button:focus{
+    border-color: transparent;
+    box-shadow: transparent;
+}
+
+//Dropdowns
+.dropdown-item:hover{
+  cursor: pointer;
+}
 
 // Forms
-.input-default{ 
+.input-default{
     border-color: $baw-color-06;
 }
 .input-default:focus{
@@ -167,4 +185,22 @@
     box-shadow: 0rem 0rem 0rem 0.2rem $primary-color-15;
     min-height: 4rem;
     cursor: pointer;
+}
+.card-status-text{
+  font-family: $title-font;
+  font-size: 1.15em;
+  text-transform: uppercase;
+}
+.card-status-ongoing{
+  color: $success-color-15;
+}
+
+.card-status-waiting{
+  color: $baw-color-14;
+}
+.card-status-delayed{
+  color: $error-color-17;
+}
+.card-status-finished{
+  color: $primary-color-15;
 }

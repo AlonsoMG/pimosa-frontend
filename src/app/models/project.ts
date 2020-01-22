@@ -14,6 +14,7 @@ export class Project {
   newProjectClass: string;
   updatedProjectClass: string;
   selectedProjectClass: string;
+  statusClass: string;
 
   constructor(
     pk: string,
@@ -44,6 +45,8 @@ export class Project {
     this.newProjectClass = null;
     this.updatedProjectClass = null;
     this.selectedProjectClass = null;
+    this.statusClass = null;
+    this.assignStatusClass(status);
   }
 
   toggleNewProjectClass() {
@@ -80,6 +83,23 @@ export class Project {
     this.newProjectClass = null;
     this.updatedProjectClass = null;
     this.selectedProjectClass = null;
+  }
+
+  private assignStatusClass(status: string) {
+    switch (status) {
+      case 'Retrasado':
+        this.statusClass = 'card-status-delayed';
+        break;
+      case 'En Curso':
+        this.statusClass = 'card-status-ongoing';
+        break;
+      case 'En Espera':
+        this.statusClass = 'card-status-waiting';
+        break;
+      case 'Completado':
+        this.statusClass = 'card-status-finished';
+        break;
+    }
   }
 
   private formatDate(date: string) {
