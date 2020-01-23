@@ -3,13 +3,14 @@ import { Work } from './../../models/work';
 import { PowerSource } from './../../models/power-source';
 import { Operation } from './../../models/operation';
 import { Displacement } from './../../models/displacement';
-import { GET_MACHINERY_TYPE_LIST_URL, GET_DISPLACEMENT_LIST_URL, GET_OPERATION_LIST_URL, GET_POWER_SOURCE_LIST_URL, GET_WORK_LIST_URL, CREATE_MACHINERY_URL, GET_MACHINERY_URL, GET_MACHINERY_LIST_URL, UPDATE_MACHINERY_URL } from './../../api/endpoints';
+import { GET_MACHINERY_PROJECT_LIST_URL, GET_MACHINERY_TYPE_LIST_URL, GET_DISPLACEMENT_LIST_URL, GET_OPERATION_LIST_URL, GET_POWER_SOURCE_LIST_URL, GET_WORK_LIST_URL, CREATE_MACHINERY_URL, GET_MACHINERY_URL, GET_MACHINERY_LIST_URL, UPDATE_MACHINERY_URL } from './../../api/endpoints';
 import { MachineryType } from './../../models/machinery-type';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { of, Observable } from 'rxjs';
 import { Machinery } from 'src/app/models/machinery';
+import { Project } from 'src/app/models/project';
 
 @Injectable({
   providedIn: 'root'
@@ -75,12 +76,22 @@ export class MachineryService {
   }
 
   getMachineryList(): Observable<Machinery[]> {
-    const data = { }
+    const data = {}
     return this.http.post<Machinery[]>(GET_MACHINERY_LIST_URL, data, this.httpOptions)
       .pipe(
         catchError(this.handleError<Machinery[]>('getMachineryList', []))
       );
-  }  
+  }
+
+  getMachineryProjectList(machineryPk: string): Observable<Project[]> {
+    const data = {
+      'machineryPk': machineryPk
+    }
+    return this.http.post<Project[]>(GET_MACHINERY_PROJECT_LIST_URL, data, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<Project[]>('getMachineryProjectList', []))
+      );
+  }
 
   getMachineryTypeList(): Observable<MachineryType[]> {
     const data = {}

@@ -122,6 +122,12 @@ export class ProjectDashboardComponent implements OnInit {
       this.showList.push(5);
       this.projectList = [...this.projectMasterList];
     }
+
+    if (this.projectMasterList.length > 0) {
+      console.log(`Selecting Project`);
+      this.selectedProject = this.projectMasterList[0];
+      this.showConfigurationPanel(this.selectedProject);
+    }
   }
 
   private getProjectList(): void {

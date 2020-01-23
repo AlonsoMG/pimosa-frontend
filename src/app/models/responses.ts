@@ -1,3 +1,17 @@
+export class AddMachineryToProjectResponse {
+  created: boolean;
+  message: string;
+
+  constructor(
+    created: boolean,
+    message: string,
+
+  ) {
+    this.created = created;
+    this.message = message;
+  }
+}
+
 export class CreateMachineryResponse {
   created: boolean;
   message: string;
@@ -46,6 +60,20 @@ export class CreateTaskResponse {
     this.created = created;
     this.message = message;
     this.taskPk = taskPk;
+  }
+}
+
+export class DeleteMachineryFromProjectResponse {
+  deleted: boolean;
+  message: string;
+
+  constructor(
+    deleted: boolean,
+    message: string,
+
+  ) {
+    this.deleted = deleted;
+    this.message = message;
   }
 }
 
